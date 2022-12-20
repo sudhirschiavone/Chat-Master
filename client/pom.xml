@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>it.fi.itismeucci</groupId>
-  <artifactId>server</artifactId>
+  <artifactId>client</artifactId>
   <version>2</version>
 
-  <name>server</name>
+  <name>client</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -26,10 +26,10 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-databind</artifactId>
-    <version>2.13.3</version>
-  </dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.13.3</version>
+    </dependency>
   </dependencies>
 
   <build>

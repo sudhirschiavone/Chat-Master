@@ -1,5 +1,6 @@
 package it.fi.itismeucci;
 
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Messaggio {
@@ -62,6 +63,5 @@ public class Messaggio {
     public String toString() {
         return "Messaggio [ID=" + ID + ", nome=" + nome + ", destinatario=" + destinatario + ", testo=" + testo + "]";
     }
-
 
 }

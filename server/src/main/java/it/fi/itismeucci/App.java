@@ -1,13 +1,10 @@
 package it.fi.itismeucci;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Server server = new Server();   //Si crea il server
+        server.attendi();               //Si mette il server in attesa, così da far connettere ad esso tutti i client
     }
 }
