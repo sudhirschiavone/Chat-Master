@@ -30,7 +30,7 @@ public class ServerThread extends Thread
         try{
             outVersoClient = new DataOutputStream(client.getOutputStream());        //Si crea la periferica di output verso il client 
             inDalClient = new BufferedReader(new InputStreamReader (client.getInputStream()));      //Si crea la periferica di input dal client
-            System.out.println("un client si è unito alla chat ");       //Messaggio di prova per confermare l'arrivo dei messaggi del client
+            System.out.println("un client si sta unendo alla chat ");       //Messaggio di prova per confermare l'arrivo dei messaggi del client
 
             while(chiusura){
 
@@ -46,13 +46,15 @@ public class ServerThread extends Thread
                                 presenza = true;        //Controllo della presenza del nickname non appena il client invia il proprio
                             }
                         }
-                        System.out.println("Si è connesso "+ messaggio.getNome());
                         if(!presenza){
+                            System.out.println("Si è connesso "+ messaggio.getNome());
                             Server.lista.set(posizione, messaggio.getNome());   //Si imposta la posizione ed il nome del client nella lista 
                             messaggio.setID(0);     //Si regola l'ID a 0 solo per il controllo dell'ID
                             messaggio.setDestinatario(messaggio.getNome());     //Si imposta come destinatario del messaggio il client che ha fatto la richiesta del nickname
                             String MessageAsString = objectMapper.writeValueAsString(messaggio);    //Si trasforma il messaggio da inviare in una stringa da deserializzare
                             outVersoClient.writeBytes(MessageAsString + "\n");         //Si inivia la stringa al client
+                        }else{
+                            System.out.println(messaggio.getNome()+" non è riuscito a connettersi");
                         }
 
                     break;

@@ -41,7 +41,7 @@ public class Ricezione extends Thread{
                 else if(messaggio.getID() == 1){
                     String[] nomi = messaggio.getTesto().split("///");      //Crea un array con tutti i nomi dei client separati dal testo "///"
                     for (int i = 0; i < nomi.length; i++) {     //Ciclo su tutti i nomi
-                        System.out.println("- " + nomi[i]);     //Stampa della lista dei nomi
+                        System.out.println("-" + nomi[i]);     //Stampa della lista dei nomi
                     }
                 }
                 else if(messaggio.getID() == 4){
